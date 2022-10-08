@@ -11,6 +11,7 @@ provider:
   environment:
     COOKIE: ${param:COOKIE}
     BODY_TOKEN: ${param:BODY_TOKEN}
+    REDIS_URL: ${param:REDIS_URL}
 
 functions:
   stockInfo:
