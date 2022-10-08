@@ -1,0 +1,21 @@
+org: tvqqq
+app: sls-vietstock
+service: sls-vietstock
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 256
+  region: ap-southeast-1
+  environment:
+    COOKIE: ${param:COOKIE}
+    BODY_TOKEN: ${param:BODY_TOKEN}
+
+functions:
+  stockInfo:
+    handler: handler.stockInfo
+    events:
+      - httpApi:
+          path: /
+          method: get
